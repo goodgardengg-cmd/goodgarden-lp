@@ -776,6 +776,12 @@
     margin-left: 4px;
   }
 
+  .field-note {
+    font-size: 0.9rem;
+    color: var(--color-text-soft);
+    margin: 6px 0 0;
+  }
+
   input[type="text"],
   input[type="email"],
   input[type="tel"],
@@ -839,12 +845,37 @@
     margin-top: 12px;
   }
 
+  .form-privacy-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-text-soft);
+    margin-top: 12px;
+  }
+
+  .form-privacy-note a {
+    color: var(--color-text-soft);
+    text-decoration: underline;
+  }
+
   footer {
     text-align: center;
     padding: 24px 0;
     font-size: 0.875rem;
     color: var(--color-text-soft);
     background: var(--color-bg);
+  }
+
+  footer p {
+    margin: 0 0 8px;
+  }
+
+  footer p:last-child {
+    margin-bottom: 0;
+  }
+
+  footer a {
+    color: var(--color-text-soft);
+    text-decoration: underline;
   }
 
   @media (min-width: 600px) {
@@ -1248,8 +1279,9 @@
           <input type="email" id="email" name="email" required>
         </div>
         <div>
-          <label for="tel">電話番号</label>
+          <label for="tel">電話番号(任意)</label>
           <input type="tel" id="tel" name="tel">
+          <p class="field-note">※現地見積りの日程調整でご連絡する場合があります</p>
         </div>
         <div>
           <label for="city">お住まいの市区町村<span class="required-mark">必須</span></label>
@@ -1260,6 +1292,7 @@
           <textarea id="content" name="content" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary form-submit">この内容で送信する</button>
+        <p class="form-privacy-note">送信いただいた内容は、<a href="privacy.html">個人情報の取扱いについて</a>に基づいて管理します。</p>
         <p id="form-error" class="form-error" hidden>送信に失敗しました。お手数ですがLINEからご連絡ください。</p>
       </form>
 
@@ -1281,6 +1314,7 @@
 </main>
 
 <footer>
+  <p><a href="privacy.html">個人情報の取扱いについて</a></p>
   <p>&copy; 2026 Good Garden</p>
 </footer>
 
