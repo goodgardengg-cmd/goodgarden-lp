@@ -5,6 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Good Garden｜関西の造園・庭木剪定・伐採・除草・外構</title>
 <meta name="description" content="関西一円対応の造園業「Good Garden」。庭木の剪定・伐採・特殊伐採・草刈り・除草・外構工事まで、見積りから作業・片付けまで代表が一貫して対応します。">
+
+<!-- OGP -->
+<!-- ⚠️ 独自ドメイン取得後は、og:url / og:image / JSON-LDのurl・imageのドメイン部分を差し替えること -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Good Garden">
+<meta property="og:title" content="Good Garden｜関西の造園・庭木剪定・伐採・除草・外構">
+<meta property="og:description" content="関西一円対応の造園業「Good Garden」。庭木の剪定・伐採・特殊伐採・草刈り・除草・外構工事まで、見積りから作業・片付けまで代表が一貫して対応します。">
+<meta property="og:url" content="https://goodgardengg-cmd.github.io/goodgarden-lp/">
+<meta property="og:image" content="https://goodgardengg-cmd.github.io/goodgarden-lp/images/works/ogp.jpg">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- 構造化データ(LocalBusiness) -->
+<!-- ⚠️ 住所・電話番号は非公開方針のため意図的に含めていない -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Good Garden",
+  "description": "関西一円対応の造園業。庭木の剪定・伐採・特殊伐採・草刈り・除草・外構工事まで対応します。",
+  "url": "https://goodgardengg-cmd.github.io/goodgarden-lp/",
+  "image": "https://goodgardengg-cmd.github.io/goodgarden-lp/images/works/ogp.jpg",
+  "founder": { "@type": "Person", "name": "西田 翔" },
+  "foundingDate": "2024-05",
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "大阪府" },
+    { "@type": "AdministrativeArea", "name": "兵庫県" },
+    { "@type": "AdministrativeArea", "name": "京都府" },
+    { "@type": "AdministrativeArea", "name": "奈良県" },
+    { "@type": "AdministrativeArea", "name": "滋賀県" },
+    { "@type": "AdministrativeArea", "name": "和歌山県" }
+  ],
+  "knowsAbout": ["庭木の剪定", "伐採", "特殊伐採", "草刈り", "除草", "外構工事"]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
@@ -802,6 +840,26 @@
       width: auto;
       min-width: 200px;
     }
+
+    /* PC離脱対策: 縦長ヒーローが画面を埋め尽くさないよう高さに上限を設ける */
+    .hero-image-wrap {
+      aspect-ratio: auto;
+      height: min(78vh, 640px);
+    }
+
+    .hero-image-wrap img {
+      object-position: center 16%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #works .container {
+      max-width: 960px;
+    }
+
+    .ba-pair img {
+      height: 240px;
+    }
   }
 </style>
 </head>
@@ -812,7 +870,7 @@
     <img src="images/works/hero.jpg" alt="木に登り特殊伐採を行うGood Gardenの作業風景" fetchpriority="high">
   </div>
   <div class="hero-copy">
-    <p class="hero-logo">Good Garden</p>
+    <h1 class="hero-logo">Good Garden</h1>
     <p class="hero-tagline">関西の造園・伐採・外構</p>
     <hr class="hero-divider">
     <p class="hero-catch">関西の庭を、仲間と一貫して、最後まで。</p>
