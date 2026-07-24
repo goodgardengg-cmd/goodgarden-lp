@@ -1,0 +1,13 @@
+# 開発用の資料(公開しない)
+instructions/
+PROGRESS.md
+CLAUDE.md
+
+# 元画像(重いので不要。軽量化済みの images/works/ のみ公開する)
+images/works_src/
+
+# Mac
+.DS_Store
+
+# Claude Code ローカル設定(開発用)
+.claude/

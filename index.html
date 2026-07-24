@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Good Garden｜関西の造園・庭木剪定・伐採・除草・外構</title>
+<meta name="description" content="関西一円対応の造園業「Good Garden」。庭木の剪定・伐採・特殊伐採・草刈り・除草・外構工事まで、見積りから作業・片付けまで代表が一貫して対応します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<style>
+  :root {
+    /* ニワミルAppTheme.swift由来のカラーパレット */
+    --color-primary: #337D4C;
+    --color-primary-dark: #2E5E3C;
+    --color-primary-deep: #2F7D46;
+
+    --color-bg: #ffffff;
+    --color-bg-soft: #F3F7F0;
+
+    --color-text: #333333;
+    --color-text-soft: #666666;
+    --color-border: #e0e0e0;
+
+    /* アプリのvividグラデーション5段(ブランドのアクセントに使用) */
+    --grad-0: #E3DD93;
+    --grad-1: #B3CC88;
+    --grad-2: #87B87B;
+    --grad-3: #5FA870;
+    --grad-4: #529D6C;
+
+    --max-width: 720px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.8;
+  }
+
+  h1, h2, h3, .hero-logo {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 64px 0;
+  }
+
+  /* セクションの背景リズム(白 → soft → 白 … / CTAのみ緑で強調して区切る) */
+  #troubles, #flow, #faq, #contact { background: var(--color-bg); }
+  #about, #works, #area, #company { background: var(--color-bg-soft); }
+
+  h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: var(--color-primary-dark);
+    margin: 0 0 24px;
+    text-align: center;
+  }
+
+  h2::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--color-primary);
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+
+  #cta-1 h2::after {
+    background: #fff;
+  }
+
+  /* ===== ヒーロー ===== */
+  .hero {
+    position: relative;
+    padding: 0;
+    background: #000;
+  }
+
+  .hero-image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+  }
+
+  .hero-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-copy {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 24px 20px 32px;
+    /* ブランドの深緑を使った半透明オーバーレイ(可読性確保+アプリとの世界観のつながり) */
+    background: linear-gradient(to top,
+      rgba(46, 94, 60, 0.88) 0%,
+      rgba(46, 94, 60, 0.55) 45%,
+      rgba(46, 94, 60, 0) 100%);
+    color: #fff;
+  }
+
+  .hero-logo {
+    font-size: clamp(2.2rem, 8vw, 3rem);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin: 0;
+    opacity: 1;
+  }
+
+  .hero-tagline {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    margin: 4px 0 0;
+    opacity: 0.9;
+    font-weight: 500;
+  }
+
+  .hero-divider {
+    width: 40px;
+    height: 2px;
+    background: #fff;
+    opacity: 0.6;
+    border: none;
+    margin: 14px 0;
+  }
+
+  .hero-catch {
+    font-size: clamp(1.3rem, 5vw, 1.4rem);
+    margin: 0 0 8px;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    margin: 0;
+    opacity: 0.95;
+    font-weight: 500;
+  }
+
+  .hero-scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    opacity: 0.85;
+    animation: hero-bounce 1.8s ease-in-out infinite;
+  }
+
+  @keyframes hero-bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 6px); }
+  }
+
+  /* アプリのグラデーションを使ったブランドの帯(世界観のつなぎ) */
+  .brand-gradient-bar {
+    height: 4px;
+    background: linear-gradient(90deg,
+      var(--grad-0), var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-4));
+  }
+
+  /* ===== アプリ流入バナー ===== */
+  .app-banner {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .app-banner p {
+    margin: 0 0 10px;
+  }
+
+  .app-banner a {
+    display: inline-block;
+    background: #fff;
+    color: var(--color-primary-dark);
+    padding: 8px 20px;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  /* ===== はじめまして ===== */
+  .commitment-flow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .commitment-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 76px;
+  }
+
+  .commitment-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid var(--color-primary);
+    font-size: 1.3rem;
+  }
+
+  .commitment-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--color-primary-dark);
+    text-align: center;
+  }
+
+  .commitment-arrow {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    margin-top: 10px;
+    opacity: 0.7;
+  }
+
+  .commitment-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--color-text-soft);
+    margin: 0 0 24px;
+  }
+
+  .about-photo {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.07);
+  }
+
+  .about-body p {
+    margin: 0 0 16px;
+  }
+
+  .qualification-list {
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .qualification-list li {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary-dark);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .qualification-list li .q-icon {
+    font-size: 0.95rem;
+  }
+
+  .qualification-note {
+    font-size: 0.85rem;
+    color: var(--color-text-soft);
+    margin: 0 0 24px;
+  }
+
+  .niwamiru-block {
+    background: #fff;
+    border-left: 4px solid var(--color-primary);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.07);
+  }
+
+  .niwamiru-block h3 {
+    margin: 0 0 12px;
+    font-size: 1.1rem;
+    color: var(--color-primary-dark);
+  }
+
+  .niwamiru-block p {
+    margin: 0 0 12px;
+  }
+
+  .niwamiru-block p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ===== お困りごと ===== */
+  .trouble-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .trouble-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    transition: transform 0.15s ease;
+  }
+
+  .trouble-card:hover,
+  .trouble-card:active {
+    transform: translateY(-2px);
+  }
+
+  .trouble-card .icon {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .trouble-cta {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-primary-dark);
+    font-weight: 500;
+    margin: 24px 0 0;
+  }
+
+  /* ===== 施工事例 ===== */
+  .works-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .works-tab {
+    border: 1px solid var(--color-primary);
+    background: #fff;
+    color: var(--color-primary-dark);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  .works-tab.is-active {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  .work-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  }
+
+  .ba-pair {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .ba-pair figure {
+    position: relative;
+    flex: 1 1 50%;
+    margin: 0;
+    min-width: 0;
+  }
+
+  .ba-pair img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .ba-after img {
+    box-shadow: 0 4px 10px rgba(51,125,76,0.22);
+  }
+
+  .ba-arrow {
+    flex: 0 0 auto;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+
+  .ba-pair figcaption {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.03em;
+  }
+
+  .ba-label--before {
+    background: rgba(51,51,51,0.7);
+  }
+
+  .ba-label--after {
+    background: rgba(51,125,76,0.9);
+  }
+
+  .work-card h3 {
+    font-size: 1rem;
+    margin: 4px 0 8px;
+  }
+
+  .work-card p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--color-text-soft);
+  }
+
+  .works-note {
+    background: #fff;
+    border-left: 4px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 0.85rem;
+    color: var(--color-text-soft);
+    margin-top: 24px;
+  }
+
+  .works-note strong {
+    color: var(--color-primary-dark);
+  }
+
+  /* ===== CTAブロック ===== */
+  .cta-block {
+    text-align: center;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    box-sizing: border-box;
+  }
+
+  .btn-primary {
+    background: var(--color-primary);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.55);
+    box-shadow: 0 6px 10px rgba(31,74,44,0.24);
+    font-size: 1.05rem;
+  }
+
+  .btn-primary:active { opacity: 0.85; }
+
+  .btn-secondary {
+    background: #06c755;
+    color: #fff;
+    font-size: 0.95rem;
+  }
+
+  .phone-note {
+    font-size: 0.78rem;
+    color: var(--color-text-soft);
+    margin: 10px auto 0;
+    max-width: 360px;
+  }
+
+  /* CTAブロック①は緑背景で区切りを作る */
+  #cta-1 {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  #cta-1 h2 { color: #fff; }
+
+  #cta-1 .btn-primary {
+    background: #fff;
+    color: var(--color-primary-dark);
+    border-color: #fff;
+  }
+
+  #cta-1 .phone-note {
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* ===== ご依頼の流れ ===== */
+  .flow-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: step;
+  }
+
+  .flow-list li {
+    counter-increment: step;
+    position: relative;
+    padding: 0 0 24px 44px;
+    border-left: 2px solid var(--color-primary);
+    margin-left: 16px;
+  }
+
+  .flow-list li:last-child {
+    border-left: 2px solid transparent;
+    padding-bottom: 0;
+  }
+
+  .flow-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: -17px;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .flow-list h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+  }
+
+  .flow-list p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-soft);
+  }
+
+  /* ===== 対応エリア ===== */
+  .area-list {
+    margin: 16px 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+
+  .area-list dt {
+    flex-basis: 100%;
+    font-weight: 700;
+    margin: 14px 0 2px;
+  }
+
+  .area-list dt:first-child {
+    margin-top: 0;
+  }
+
+  .area-list dd {
+    margin: 0;
+    background: #fff;
+    border-radius: 16px;
+    padding: 5px 14px;
+    font-size: 0.85rem;
+  }
+
+  .area-note {
+    font-size: 0.85rem;
+    color: var(--color-text-soft);
+  }
+
+  /* ===== FAQ ===== */
+  details {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 4px 44px 4px 16px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  }
+
+  summary {
+    padding: 14px 0;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: "+";
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  details[open] summary::after {
+    content: "−";
+  }
+
+  details p {
+    margin: 0 0 16px;
+    font-size: 0.9rem;
+    color: var(--color-text-soft);
+  }
+
+  /* ===== 運営者情報 ===== */
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 0.9rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  }
+
+  .info-table th,
+  .info-table td {
+    text-align: left;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+  }
+
+  .info-table tr:last-child th,
+  .info-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .info-table th {
+    width: 35%;
+    color: var(--color-text-soft);
+    font-weight: 500;
+  }
+
+  /* ===== フォーム ===== */
+  .contact-note {
+    background: var(--color-bg-soft);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .required-mark {
+    color: var(--color-primary-dark);
+    font-weight: 500;
+    font-size: 0.75rem;
+    margin-left: 4px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 1px;
+  }
+
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .form-submit {
+    border: none;
+    cursor: pointer;
+  }
+
+  .form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .form-photo-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-soft);
+    margin-top: 24px;
+    line-height: 1.7;
+  }
+
+  .after-form {
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .form-thanks {
+    background: var(--color-bg-soft);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .form-error {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-text-soft);
+    font-weight: 700;
+    margin-top: 12px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 24px 0;
+    font-size: 0.8rem;
+    color: var(--color-text-soft);
+    background: var(--color-bg);
+  }
+
+  @media (min-width: 600px) {
+    .trouble-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cta-buttons {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .btn {
+      width: auto;
+      min-width: 200px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-image-wrap">
+    <img src="images/works/hero.jpg" alt="木に登り特殊伐採を行うGood Gardenの作業風景" fetchpriority="high">
+  </div>
+  <div class="hero-copy">
+    <p class="hero-logo">Good Garden</p>
+    <p class="hero-tagline">関西の造園・伐採・外構</p>
+    <hr class="hero-divider">
+    <p class="hero-catch">関西の庭を、仲間と一貫して、最後まで。</p>
+    <p class="hero-sub">見積りから作業・片付けまで、代表と仲間がすべて対応します。</p>
+  </div>
+  <div class="hero-scroll-cue">↓</div>
+</header>
+
+<div class="brand-gradient-bar"></div>
+
+<div id="app-banner" class="app-banner" hidden>
+  <p>ニワミルの診断結果をお持ちの方へ<br>診断結果のスクリーンショットを添えてご相談いただけます。</p>
+  <a href="#contact">ご相談フォームへ</a>
+</div>
+
+<main>
+
+  <!-- ② はじめまして -->
+  <section id="about">
+    <div class="container">
+      <h2>はじめまして。Good Gardenの西田です。</h2>
+
+      <div class="commitment-flow">
+        <div class="commitment-step">
+          <span class="commitment-icon">📋</span>
+          <span class="commitment-label">見積り</span>
+        </div>
+        <span class="commitment-arrow">→</span>
+        <div class="commitment-step">
+          <span class="commitment-icon">🔨</span>
+          <span class="commitment-label">作業</span>
+        </div>
+        <span class="commitment-arrow">→</span>
+        <div class="commitment-step">
+          <span class="commitment-icon">🧹</span>
+          <span class="commitment-label">片付け</span>
+        </div>
+      </div>
+      <p class="commitment-note">すべて代表と仲間が対応(中間マージンなし)</p>
+
+      <div class="about-photo">
+        <img src="images/works/profile.jpg" alt="作業中のGood Garden代表・西田" loading="lazy">
+      </div>
+      <div class="about-body">
+        <p>造園歴8年(下積み含む)、2024年5月に独立してGood Gardenを立ち上げました。見積りから作業、後片付けまで、代表の私と信頼できる仲間だけで対応しています。下請けや中間マージンがない分、費用は作業そのものに還元でき、現場の様子もすべて把握した状態でお答えできます。</p>
+
+        <p><strong>保有資格・修了教育</strong></p>
+        <ul class="qualification-list">
+          <li><span class="q-icon">🪚</span>伐木等の業務に係る特別教育(チェーンソーによる伐木)修了</li>
+          <li><span class="q-icon">🪢</span>ロープ高所作業特別教育 修了</li>
+          <li><span class="q-icon">🦺</span>フルハーネス型墜落制止用器具特別教育 修了</li>
+        </ul>
+        <p class="qualification-note">これらの資格により、高くて自分では手が届かない木の伐採(特殊伐採)にも対応できます。</p>
+      </div>
+
+      <div class="niwamiru-block">
+        <h3>実は、庭の診断アプリ「ニワミル」も作っています</h3>
+        <p>現場に伺うと、「これ、切っていいの?」「これって危ないですか?」とよく聞かれます。ちょっとした判断のために、わざわざ人を呼ぶのは気が引ける──そんな声にこたえたくて、庭の状態をスマホで診断できるアプリ「ニワミル」を自分で開発しました。</p>
+        <p>ただし、危険が伴う作業や判断が難しいケースは、AIにまかせきりにせず、正直に人(プロ)へご相談いただく設計にしています。安全よりも便利さを優先することはしません。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ こんなお困りごと、ありませんか? -->
+  <section id="troubles">
+    <div class="container">
+      <h2>こんなお困りごと、ありませんか?</h2>
+      <div class="trouble-grid">
+        <div class="trouble-card"><span class="icon">🌿</span>枝が隣家にはみ出している</div>
+        <div class="trouble-card"><span class="icon">🌳</span>木が大きくなりすぎた</div>
+        <div class="trouble-card"><span class="icon">✂️</span>いつ切っていいか分からない</div>
+        <div class="trouble-card"><span class="icon">🌱</span>雑草・草がすぐ生えてくる</div>
+        <div class="trouble-card"><span class="icon">🪜</span>高くて自分では登れない</div>
+        <div class="trouble-card"><span class="icon">🚜</span>畑や空き地の管理ができない</div>
+      </div>
+      <p class="trouble-cta">ひとつでもあてはまったら、お気軽にご相談ください。</p>
+    </div>
+  </section>
+
+  <!-- ④ 施工事例 -->
+  <section id="works">
+    <div class="container">
+      <h2>施工事例</h2>
+
+      <div class="works-tabs" role="tablist" aria-label="施工事例のカテゴリ">
+        <button type="button" class="works-tab is-active" data-filter="all">すべて</button>
+        <button type="button" class="works-tab" data-filter="sentei">🌳剪定</button>
+        <button type="button" class="works-tab" data-filter="bassai">🪚伐採</button>
+        <button type="button" class="works-tab" data-filter="josou">🌱除草</button>
+        <button type="button" class="works-tab" data-filter="gaikou">🏡外構</button>
+      </div>
+
+      <div class="works-list">
+
+        <article class="work-card" data-category="sentei">
+          <div class="ba-pair">
+            <figure class="ba-before">
+              <img src="images/works/sentei_before.jpg" alt="剪定前のマキの木" loading="lazy">
+              <figcaption class="ba-label--before">Before</figcaption>
+            </figure>
+            <span class="ba-arrow" aria-hidden="true">→</span>
+            <figure class="ba-after">
+              <img src="images/works/sentei_after.jpg" alt="玉散らしに仕立て直したマキの木" loading="lazy">
+              <figcaption class="ba-label--after">After</figcaption>
+            </figure>
+          </div>
+          <h3>庭木の剪定｜マキの仕立て直し</h3>
+          <p>伸び放題だった庭木を、玉散らしに仕立て直し。足元まで手を入れて、お庭全体がすっきり明るくなりました。</p>
+        </article>
+
+        <article class="work-card" data-category="bassai">
+          <div class="ba-pair">
+            <figure class="ba-before">
+              <img src="images/works/bassai_before.jpg" alt="伐採前の大木" loading="lazy">
+              <figcaption class="ba-label--before">Before</figcaption>
+            </figure>
+            <span class="ba-arrow" aria-hidden="true">→</span>
+            <figure class="ba-after">
+              <img src="images/works/bassai_after.jpg" alt="伐採後の様子" loading="lazy">
+              <figcaption class="ba-label--after">After</figcaption>
+            </figure>
+          </div>
+          <h3>大きくなった木の伐採</h3>
+          <p>お住まいを覆うほど大きくなった木を伐採。日当たりと風通しが戻り、外観もすっきりしました。</p>
+        </article>
+
+        <article class="work-card" data-category="josou">
+          <div class="ba-pair">
+            <figure class="ba-before">
+              <img src="images/works/josou_before.jpg" alt="除草前の耕作放棄地" loading="lazy">
+              <figcaption class="ba-label--before">Before</figcaption>
+            </figure>
+            <span class="ba-arrow" aria-hidden="true">→</span>
+            <figure class="ba-after">
+              <img src="images/works/josou_after.jpg" alt="除草・整地後の様子" loading="lazy">
+              <figcaption class="ba-label--after">After</figcaption>
+            </figure>
+          </div>
+          <h3>奈良県｜耕作放棄地の除草・整地</h3>
+          <p>背丈ほどに伸びた雑草を、まるごと刈り取り整地。畑や田んぼの管理が難しくなった土地、相続して草だらけになった土地もご相談ください。太陽光設置前の下準備にも対応します。ラジコン式の草刈機も導入し、斜面や広い土地にも対応します。</p>
+          <img src="images/works/josou_machine.jpg" alt="ラジコン式草刈機での作業風景" loading="lazy" style="margin-top:12px; border-radius:8px;">
+        </article>
+
+        <article class="work-card" data-category="gaikou">
+          <div class="ba-pair">
+            <figure class="ba-before">
+              <img src="images/works/gaikou_a_before.jpg" alt="外構工事前の駐車場まわり(1)" loading="lazy">
+              <figcaption class="ba-label--before">Before</figcaption>
+            </figure>
+            <span class="ba-arrow" aria-hidden="true">→</span>
+            <figure class="ba-after">
+              <img src="images/works/gaikou_a_after.jpg" alt="外構工事後の駐車場まわり(1)" loading="lazy">
+              <figcaption class="ba-label--after">After</figcaption>
+            </figure>
+          </div>
+          <div class="ba-pair">
+            <figure class="ba-before">
+              <img src="images/works/gaikou_b_before.jpg" alt="外構工事前の駐車場まわり(2)" loading="lazy">
+              <figcaption class="ba-label--before">Before</figcaption>
+            </figure>
+            <span class="ba-arrow" aria-hidden="true">→</span>
+            <figure class="ba-after">
+              <img src="images/works/gaikou_b_after.jpg" alt="外構工事後の駐車場まわり(2)" loading="lazy">
+              <figcaption class="ba-label--after">After</figcaption>
+            </figure>
+          </div>
+          <h3>大阪府吹田市｜駐車場まわりの土間・タイル施工</h3>
+          <p>砂利敷きだったスペースを、タイルと化粧砂利でデザイン。モミジや立水栓も設え、車庫まわりがぐっと上質な印象に。</p>
+        </article>
+
+      </div>
+
+      <p class="works-note">
+        料金は木の高さ・本数・作業スペース・面積・処分量によって変わります。<br>
+        必ず無料の現地見積りをしたうえで、金額をご提示します。<br>
+        <strong>お見積り後に追加料金をいただくことはありません。</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- ⑤ CTAブロック(1回目) -->
+  <section id="cta-1">
+    <div class="container cta-block">
+      <h2>まずはお気軽にご相談ください</h2>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn btn-primary">ご相談フォーム</a>
+        <a href="https://lin.ee/7UAnHml" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">LINEで相談</a>
+      </div>
+      <p class="phone-note">
+        ご相談はフォーム・LINEからお気軽にどうぞ。通常1〜2営業日以内にご返信します。
+      </p>
+    </div>
+  </section>
+
+  <!-- ⑥ ご依頼の流れ -->
+  <section id="flow">
+    <div class="container">
+      <h2>ご依頼の流れ</h2>
+      <ol class="flow-list">
+        <li>
+          <h3>お問い合わせ</h3>
+          <p>フォーム・LINEのいずれかでご相談ください。</p>
+        </li>
+        <li>
+          <h3>無料現地見積り</h3>
+          <p>現地を拝見し、状況に合わせて最適な作業内容をご提案します。</p>
+        </li>
+        <li>
+          <h3>お見積りのご提示・ご契約</h3>
+          <p>内容にご納得いただいてから契約に進みます。お見積り後に追加料金が発生することはありません。</p>
+        </li>
+        <li>
+          <h3>作業</h3>
+          <p>代表と仲間で、安全第一に丁寧に作業を行います。</p>
+        </li>
+        <li>
+          <h3>後片付け・ご確認</h3>
+          <p>片付けまで責任を持って行い、最後に仕上がりをご確認いただきます。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ⑦ 対応エリア -->
+  <section id="area">
+    <div class="container">
+      <h2>対応エリア</h2>
+      <p>関西一円(大阪府・兵庫県・京都府・奈良県・滋賀県・和歌山県)に対応しています。</p>
+      <dl class="area-list">
+        <dt>大阪府</dt>
+        <dd>大阪市</dd><dd>吹田市</dd><dd>豊中市</dd><dd>高槻市</dd>
+        <dt>兵庫県</dt>
+        <dd>神戸市</dd><dd>西宮市</dd><dd>尼崎市</dd><dd>伊丹市</dd>
+        <dt>京都府</dt>
+        <dd>京都市</dd><dd>宇治市</dd><dd>長岡京市</dd>
+        <dt>奈良県</dt>
+        <dd>奈良市</dd><dd>生駒市</dd><dd>大和郡山市</dd>
+        <dt>滋賀県</dt>
+        <dd>大津市</dd><dd>草津市</dd>
+        <dt>和歌山県</dt>
+        <dd>和歌山市</dd><dd>橋本市</dd>
+      </dl>
+      <p class="area-note">上記以外の地域もご相談ください。</p>
+    </div>
+  </section>
+
+  <!-- ⑧ よくあるご質問 -->
+  <section id="faq">
+    <div class="container">
+      <h2>よくあるご質問</h2>
+
+      <details>
+        <summary>1本だけでも依頼できますか?</summary>
+        <p>もちろん可能です。庭木1本の剪定から承っております。</p>
+      </details>
+
+      <details>
+        <summary>見積りは無料ですか? 見積り後にキャンセルできますか?</summary>
+        <p>現地見積りは無料です。金額にご納得いただけない場合は、その場でお断りいただいて構いません。</p>
+      </details>
+
+      <details>
+        <summary>高くて自分では手が届かない木でも対応できますか?</summary>
+        <p>ロープ高所作業特別教育・フルハーネス型墜落制止用器具特別教育を修了しており、高木や特殊な伐採にも対応しています。</p>
+      </details>
+
+      <details>
+        <summary>切った枝や刈った草の処分もお願いできますか?</summary>
+        <p>はい、処分まで含めて対応いたします。</p>
+      </details>
+
+      <details>
+        <summary>畑や空き地の草刈り・整地もお願いできますか?</summary>
+        <p>対応可能です。ラジコン式の草刈機も導入しており、斜面や広い土地にも対応できます。</p>
+      </details>
+
+      <details>
+        <summary>ニワミルの診断結果を見せれば話が早いですか?</summary>
+        <p>はい。スクリーンショットを添えてご相談いただくと、より具体的なご案内ができます。</p>
+      </details>
+
+      <details>
+        <summary>事務所の住所が書かれていないのはなぜですか?</summary>
+        <p>自宅を事業所としているため、住所は非公開とさせていただいております。ご了承ください。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- TODO: お客様の声セクション(声が集まり次第追加) -->
+
+  <!-- ⑨ 運営者情報 -->
+  <section id="company">
+    <div class="container">
+      <h2>運営者情報</h2>
+      <table class="info-table">
+        <tbody>
+          <tr><th>屋号</th><td>Good Garden</td></tr>
+          <tr><th>代表者</th><td>西田　翔</td></tr>
+          <tr><th>創業</th><td>2024年5月</td></tr>
+          <tr><th>事業内容</th><td>庭木の剪定・伐採・特殊伐採・草刈り・除草・外構工事(土間コンクリート等)</td></tr>
+          <tr><th>対応エリア</th><td>関西一円</td></tr>
+          <tr>
+            <th>保有資格・修了教育</th>
+            <td>
+              伐木等の業務に係る特別教育(チェーンソーによる伐木)修了<br>
+              ロープ高所作業特別教育 修了<br>
+              フルハーネス型墜落制止用器具特別教育 修了
+            </td>
+          </tr>
+          <tr><th>連絡先</th><td>お問い合わせフォーム / LINE</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ⑩ CTAブロック(2回目)+ ご相談フォーム -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="cta-block">まずはお気軽にご相談ください</h2>
+
+      <p class="contact-note">
+        ニワミルで診断した結果のスクリーンショットをお持ちの方は、LINEでお送りいただけると、より具体的なご案内ができます。
+      </p>
+
+      <form id="contact-form" action="https://formspree.io/f/mlgqpooo" method="POST">
+        <input type="hidden" name="_subject" value="【Good Garden】LPからのお問い合わせ">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div>
+          <label for="name">お名前<span class="required-mark">必須</span></label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">メールアドレス<span class="required-mark">必須</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="tel">電話番号</label>
+          <input type="tel" id="tel" name="tel">
+        </div>
+        <div>
+          <label for="city">お住まいの市区町村<span class="required-mark">必須</span></label>
+          <input type="text" id="city" name="city" placeholder="例:大阪府吹田市" required>
+        </div>
+        <div>
+          <label for="content">ご相談内容<span class="required-mark">必須</span></label>
+          <textarea id="content" name="content" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">この内容で送信する</button>
+        <p id="form-error" class="form-error" hidden>送信に失敗しました。お手数ですがLINEからご連絡ください。</p>
+      </form>
+
+      <p class="form-photo-note">
+        お写真を送りたい方は、LINEからお送りいただけます。<br>
+        ニワミルの診断結果のスクリーンショットも、LINEで直接お送りいただけます。
+      </p>
+
+      <div class="after-form">
+        <a href="https://lin.ee/7UAnHml" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">LINEで相談</a>
+      </div>
+
+      <div id="form-thanks" class="form-thanks" hidden>
+        <p>お問い合わせありがとうございます。通常1〜2営業日以内にご返信いたします。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Good Garden</p>
+</footer>
+
+<script>
+  (function () {
+    var params = new URLSearchParams(location.search);
+    if (params.get('from') === 'app') {
+      var banner = document.getElementById('app-banner');
+      if (banner) banner.hidden = false;
+    }
+  })();
+
+  (function () {
+    var tabs = document.querySelectorAll('.works-tab');
+    var cards = document.querySelectorAll('.work-card');
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) { t.classList.remove('is-active'); });
+        tab.classList.add('is-active');
+
+        var filter = tab.dataset.filter;
+        cards.forEach(function (card) {
+          var show = filter === 'all' || card.dataset.category === filter;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  })();
+
+  (function () {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+
+    var submitButton = form.querySelector('.form-submit');
+    var errorMessage = document.getElementById('form-error');
+    var thanksMessage = document.getElementById('form-thanks');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      errorMessage.hidden = true;
+      submitButton.disabled = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (response) {
+        if (response.ok) {
+          form.hidden = true;
+          thanksMessage.hidden = false;
+        } else {
+          errorMessage.hidden = false;
+          submitButton.disabled = false;
+        }
+      }).catch(function () {
+        errorMessage.hidden = false;
+        submitButton.disabled = false;
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
