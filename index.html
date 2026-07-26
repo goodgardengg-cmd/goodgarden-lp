@@ -54,7 +54,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 <style>
   :root {
-    /* ニワミルAppTheme.swift由来のカラーパレット */
+    /* 庭ミルAppTheme.swift由来のカラーパレット */
     --color-primary: #337D4C;
     --color-primary-dark: #2E5E3C;
     --color-primary-deep: #2F7D46;
@@ -91,6 +91,12 @@
     font-weight: 700;
     letter-spacing: 0.02em;
     line-height: 1.4;
+    text-wrap: balance;
+  }
+
+  /* 単語の途中で不自然に改行されるのを防ぐ(対応ブラウザのみ。未対応でも通常の折り返しに自然にフォールバック) */
+  p, li, dd {
+    text-wrap: balance;
   }
 
   img { max-width: 100%; display: block; }
@@ -193,6 +199,7 @@
   .hero-catch {
     font-size: clamp(1.3rem, 5vw, 1.4rem);
     margin: 0 0 8px;
+    line-height: 1.5;
   }
 
   .hero-sub {
@@ -400,6 +407,7 @@
     font-size: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.06);
     transition: transform 0.15s ease;
+    text-wrap: balance;
   }
 
   .trouble-card:hover,
@@ -693,6 +701,7 @@
     font-weight: 700;
     cursor: pointer;
     list-style: none;
+    text-wrap: balance;
   }
 
   summary::-webkit-details-marker { display: none; }
@@ -944,7 +953,7 @@
     <h1 class="hero-logo">Good Garden</h1>
     <p class="hero-tagline">関西の造園・伐採・外構</p>
     <hr class="hero-divider">
-    <p class="hero-catch">関西の庭を、仲間と一貫して、最後まで。</p>
+    <p class="hero-catch">関西の庭を、仲間と一貫して、<br>最後まで</p>
     <p class="hero-sub">見積りから作業・片付けまで、代表と仲間がすべて対応します。</p>
   </div>
   <div class="hero-scroll-cue">↓</div>
@@ -953,7 +962,7 @@
 <div class="brand-gradient-bar"></div>
 
 <div id="app-banner" class="app-banner" hidden>
-  <p>ニワミルの診断結果をお持ちの方へ<br>診断結果のスクリーンショットを添えてご相談いただけます。</p>
+  <p>庭ミルの診断結果をお持ちの方へ<br>診断結果のスクリーンショットを添えてご相談いただけます。</p>
   <a href="#contact">ご相談フォームへ</a>
 </div>
 
@@ -962,7 +971,7 @@
   <!-- ② はじめまして -->
   <section id="about">
     <div class="container">
-      <h2>はじめまして。Good Gardenの西田です。</h2>
+      <h2>はじめまして、Good Gardenの西田です</h2>
 
       <div class="commitment-flow">
         <div class="commitment-step">
@@ -1001,8 +1010,8 @@
       </div>
 
       <div class="niwamiru-block">
-        <h3>実は、庭の診断アプリ「ニワミル」も作っています</h3>
-        <p>現場に伺うと、「これ、切っていいの?」「これって危ないですか?」とよく聞かれます。ちょっとした判断のために、わざわざ人を呼ぶのは気が引ける──そんな声にこたえたくて、庭の状態をスマホで診断できるアプリ「ニワミル」を自分で開発しました。</p>
+        <h3>実は、庭の診断アプリ「庭ミル」も作っています</h3>
+        <p>現場に伺うと、「これ、切っていいの?」「これって危ないですか?」とよく聞かれます。ちょっとした判断のために、わざわざ人を呼ぶのは気が引ける──そんな声にこたえたくて、庭の状態をスマホで診断できるアプリ「庭ミル」を自分で開発しました。</p>
         <p>ただし、危険が伴う作業や判断が難しいケースは、AIにまかせきりにせず、正直に人(プロ)へご相談いただく設計にしています。安全よりも便利さを優先することはしません。</p>
       </div>
     </div>
@@ -1011,14 +1020,14 @@
   <!-- ③ こんなお困りごと、ありませんか? -->
   <section id="troubles">
     <div class="container">
-      <h2>こんなお困りごと、ありませんか?</h2>
+      <h2>こんなお困りごと、<br>ありませんか?</h2>
       <div class="trouble-grid">
-        <div class="trouble-card"><span class="icon">🌿</span>枝が隣家にはみ出している</div>
+        <div class="trouble-card"><span class="icon">🌿</span>枝が隣家に<br>はみ出している</div>
         <div class="trouble-card"><span class="icon">🌳</span>木が大きくなりすぎた</div>
         <div class="trouble-card"><span class="icon">✂️</span>いつ切っていいか分からない</div>
-        <div class="trouble-card"><span class="icon">🌱</span>雑草・草がすぐ生えてくる</div>
-        <div class="trouble-card"><span class="icon">🪜</span>高くて自分では登れない</div>
-        <div class="trouble-card"><span class="icon">🚜</span>畑や空き地の管理ができない</div>
+        <div class="trouble-card"><span class="icon">🌱</span>雑草・草が<br>すぐ生えてくる</div>
+        <div class="trouble-card"><span class="icon">🪜</span>高くて自分では<br>登れない</div>
+        <div class="trouble-card"><span class="icon">🚜</span>畑や空き地の<br>管理ができない</div>
       </div>
       <p class="trouble-cta">ひとつでもあてはまったら、お気軽にご相談ください。</p>
     </div>
@@ -1111,7 +1120,7 @@
               <figcaption class="ba-label--after">After</figcaption>
             </figure>
           </div>
-          <h3>大阪府吹田市｜駐車場まわりの土間・タイル施工</h3>
+          <h3>大阪府吹田市｜<br>駐車場まわりの土間・タイル施工</h3>
           <p>砂利敷きだったスペースを、タイルと化粧砂利でデザイン。モミジや立水栓も設え、車庫まわりがぐっと上質な印象に。</p>
         </article>
 
@@ -1222,7 +1231,7 @@
       </details>
 
       <details>
-        <summary>ニワミルの診断結果を見せれば話が早いですか?</summary>
+        <summary>庭ミルの診断結果を見せれば話が早いですか?</summary>
         <p>はい。スクリーンショットを添えてご相談いただくと、より具体的なご案内ができます。</p>
       </details>
 
@@ -1266,7 +1275,7 @@
       <h2 class="cta-block">まずはお気軽にご相談ください</h2>
 
       <p class="contact-note">
-        ニワミルで診断した結果のスクリーンショットをお持ちの方は、LINEでお送りいただけると、より具体的なご案内ができます。
+        庭ミルで診断した結果のスクリーンショットをお持ちの方は、LINEでお送りいただけると、より具体的なご案内ができます。
       </p>
 
       <form id="contact-form" action="https://formspree.io/f/mlgqpooo" method="POST">
@@ -1300,7 +1309,7 @@
 
       <p class="form-photo-note">
         お写真を送りたい方は、LINEからお送りいただけます。<br>
-        ニワミルの診断結果のスクリーンショットも、LINEで直接お送りいただけます。
+        庭ミルの診断結果のスクリーンショットも、LINEで直接お送りいただけます。
       </p>
 
       <div class="after-form">
