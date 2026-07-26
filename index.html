@@ -91,12 +91,6 @@
     font-weight: 700;
     letter-spacing: 0.02em;
     line-height: 1.4;
-    text-wrap: balance;
-  }
-
-  /* 単語の途中で不自然に改行されるのを防ぐ(対応ブラウザのみ。未対応でも通常の折り返しに自然にフォールバック) */
-  p, li, dd {
-    text-wrap: balance;
   }
 
   img { max-width: 100%; display: block; }
@@ -407,7 +401,6 @@
     font-size: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.06);
     transition: transform 0.15s ease;
-    text-wrap: balance;
   }
 
   .trouble-card:hover,
@@ -701,7 +694,6 @@
     font-weight: 700;
     cursor: pointer;
     list-style: none;
-    text-wrap: balance;
   }
 
   summary::-webkit-details-marker { display: none; }
@@ -1045,8 +1037,8 @@
       <h2>こんなお困りごと<br>ありませんか?</h2>
       <div class="trouble-grid">
         <div class="trouble-card"><span class="icon">🌿</span>枝が隣家に<br>はみ出している</div>
-        <div class="trouble-card"><span class="icon">🌳</span>木が大きくなりすぎた</div>
-        <div class="trouble-card"><span class="icon">✂️</span>いつ切っていいか分からない</div>
+        <div class="trouble-card"><span class="icon">🌳</span>木が大きく<br>なりすぎた</div>
+        <div class="trouble-card"><span class="icon">✂️</span>いつ切っていい<br>か分からない</div>
         <div class="trouble-card"><span class="icon">🌱</span>雑草・草が<br>すぐ生えてくる</div>
         <div class="trouble-card"><span class="icon">🪜</span>高くて自分では<br>登れない</div>
         <div class="trouble-card"><span class="icon">🚜</span>畑や空き地の<br>管理ができない</div>
@@ -1234,7 +1226,7 @@
       </details>
 
       <details>
-        <summary>見積りは無料ですか? 見積り後にキャンセルできますか?</summary>
+        <summary>見積りは無料ですか?<br>見積り後にキャンセルできますか?</summary>
         <p>現地見積りは無料です。金額にご納得いただけない場合は、その場でお断りいただいて構いません。</p>
       </details>
 
